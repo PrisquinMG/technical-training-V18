@@ -1,0 +1,15 @@
+<odoo>
+    <data>
+
+          <record id="object_real_estate" model="real.estate">
+            <field name="name">House 1</field>
+            <field name="price">100000</field>
+          </record>
+
+          <record id="object_estate.property" model="estate.property">
+            <field name="name">Estate property 1</field>
+            <field name="description">Description propoerty</field>
+          </record>
+
+    </data>
+</odoo>
