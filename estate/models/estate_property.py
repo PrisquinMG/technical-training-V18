@@ -41,12 +41,11 @@ class EstateProperty(models.Model):
     offer_ids = fields.One2many("estate.property.offer", "property_id", string="Offers")
     tag_ids = fields.Many2many("estate.property.tag", string="Estate Property Tag")
     total_area = fields.Float(string="Total area", compute="_compute_total_area")
-
-
+ 
     @api.depends('living_area', 'garden_area')
     def _compute_total_area(self):
         for record in self:
-            record.total_area = 10 * record.expected_price
+            record.total_area = record.living_area + record.garden_area
 
 
     def _default_date_availability(self):
@@ -56,4 +55,5 @@ class EstateProperty(models.Model):
     @api.depends('offer_ids.price')
     def _compute_best_price(self):
         for record in self:
-            record.best_price = max(record.offer_ids.mapped('price'), default=0)
+            record.best_price = max(record.offer_ids.mapped('price'), default=0) if record.offer_ids else 0
+            

@@ -1,0 +1,60 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="learn_owl.list">
+      <field name="name">learn_owl list</field>
+      <field name="model">learn_owl.learn_owl</field>
+      <field name="arch" type="xml">
+        <list>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </list>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="learn_owl.action_window">
+      <field name="name">learn_owl window</field>
+      <field name="res_model">learn_owl.learn_owl</field>
+      <field name="view_mode">list,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="learn_owl.action_server">
+      <field name="name">learn_owl server</field>
+      <field name="model_id" ref="model_learn_owl_learn_owl"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "list,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="learn_owl" id="learn_owl.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="learn_owl.menu_1" parent="learn_owl.menu_root"/>
+    <menuitem name="Menu 2" id="learn_owl.menu_2" parent="learn_owl.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="learn_owl.menu_1_list" parent="learn_owl.menu_1"
+              action="learn_owl.action_window"/>
+    <menuitem name="Server to list" id="learn_owl" parent="learn_owl.menu_2"
+              action="learn_owl.action_server"/>
+-->
+  </data>
+</odoo>
